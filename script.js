@@ -15,6 +15,7 @@
 
   const studentList = { ...studentName, ...studentOrder };
   console.log(studentList);
+  console.log(Object.values(studentList));
   // secondo esercizio
 
   const classroom = ["A", "B", "C", "D"];
