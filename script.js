@@ -41,14 +41,12 @@
 (() => {
   const shop = {
     _products: [
-      { id: 1, name: "TV", price: 40 },
-      { id: 2, name: "PC", price: 30 },
     ],
     get products() {
       return this._products;
     },
     set products(value) {
-      [this.id, this.name, this.price] = value.split(" ");
+      this._products = value;
       document.body.innerHTML = `
 <ul class="product-list">
 <li>Id: ${shop.products[0].id}</li>
@@ -66,8 +64,10 @@
   };
 
   console.log(shop._products);
-  shop.products = ' 1 phon 28 ';
-  shop.products = ' 2 radio 32 ';
+  shop.products= [
+    { id: 1, name: "TV", price: 40 },
+    { id: 2, name: "PC", price: 30 },
+  ],
   console.log(shop._products);
 })();
 
